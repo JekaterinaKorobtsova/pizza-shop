@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Pizza Shop Project :pizza:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a sample project for a pizza shop that allows customers to choose the pizza they prefer, customize it, and place an order. The project includes features such as menu display, order customization and order processing.
 
-## Available Scripts
+## Purpose and Objectives
 
-In the project directory, you can run:
+The purpose of this project is to provide a simple example of a pizza online shop using modern web technologies. The objectives of the project are to demonstrate the use of ReactJS 18, TypeScript, Redux Toolkit, and other modern web development tools.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project is built using the following technologies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ReactJS 18
+- React Hooks
+- TypeScript
+- Redux Toolkit
+- React Router 6
+- Axios and Fetch
+- SCSS
+- React Content Loader
+- React Pagination
+- Lodash.Debounce
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To install the project, follow these steps:
 
-### `npm run build`
+1. Clone the repository: git clone <https://github.com/JekaterinaKorobtsova/pizza-shop>
+2. Install dependencies: npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To use the project, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Navigate to the project directory: cd /path/to/pizza-shop
+2. Run the project: npm start
+3. Open your web browser and navigate to <http://localhost:3000>
 
-### `npm run eject`
+### Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Menu Display**
+The project includes a menu display that shows different types of pizza.
+For a detailed acquaintance with pizza and pizza toppings, the customer can go to a separate page of the selected pizza.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Customizable Pizza Orders**
+Customers can customize their pizza orders with options for crust type and size.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Sorting**
+Customers can sort pizzas according to their preferences.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Architecture and Design
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project uses a simple component-based architecture, with each component responsible for a specific part of the application. The state management is handled using Redux Toolkit, with Redux slices being used to manage different parts of the application state.
