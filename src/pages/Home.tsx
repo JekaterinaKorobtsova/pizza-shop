@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef, useEffect, useCallback} from "react";
 import { useSelector } from "react-redux";
 import { selectFilter} from "../redux/filter/selector";
 import { setCategoryId, setCurrentPage, setFilters } from "../redux/filter/slice";
@@ -23,8 +23,6 @@ const Home: React.FC = () => {
 
   const { items, status } = useSelector(selectPizzaData);
   const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
-
-  
 
   const onChangeCategory = useCallback((idx: number) => {
     dispatch(setCategoryId(idx));
@@ -80,14 +78,11 @@ const Home: React.FC = () => {
   const skeletons = [...new Array(4)].map((_, index) => (
     <Skeleton key={index} />
   ));
-
  
-
   return (
     <>
     <img className="main-pizzaImage" src={pizzaImage} alt=''/>
     <div className="container">
-      {/* <img className="main-pizzaImage" src={pizzaImage} alt=''/> */}
       <div className="content__top">
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
         <Sort value={sort}/>

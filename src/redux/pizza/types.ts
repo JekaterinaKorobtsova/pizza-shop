@@ -6,6 +6,7 @@ export type Pizza = {
     sizes: number[];
     types: number[];
     rating: number;
+    topping: string;
   };
   
   export enum Status {

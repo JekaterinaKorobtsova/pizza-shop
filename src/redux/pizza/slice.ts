@@ -36,6 +36,6 @@ const pizzaSlice = createSlice({
   
   
   
-  export const { setItems } = pizzaSlice.actions;
+  export const { setItems} = pizzaSlice.actions;
   export default pizzaSlice.reducer;
   

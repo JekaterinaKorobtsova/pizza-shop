@@ -3,6 +3,7 @@ import filter from "./filter/slice";
 import cart from "./cart/slice";
 import pizza from "./pizza/slice";
 import { useDispatch } from "react-redux";
+import modal from "./modal/modalSlice";
 
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
     filter,
     cart,
     pizza,
+    modal,
   },
 });
 
