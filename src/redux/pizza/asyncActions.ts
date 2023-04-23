@@ -6,6 +6,7 @@ import identity from 'lodash/identity';
 
 
 
+
 export const fetchPizzas = createAsyncThunk(
     "pizza/fetchPizzasStatus",
     async (params: SearchPizzaParams) => {
@@ -15,7 +16,7 @@ export const fetchPizzas = createAsyncThunk(
           params: pickBy(
             {
               page: currentPage,
-              limit: 8,
+              limit: 30,
               category,
               sortBy,
               order,
@@ -28,4 +29,3 @@ export const fetchPizzas = createAsyncThunk(
       return data;
     }
   );
-  

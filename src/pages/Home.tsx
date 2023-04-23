@@ -1,12 +1,11 @@
-import React, { useRef, useEffect, useCallback} from "react";
+import React, { useRef, useEffect, useCallback, useState} from "react";
 import { useSelector } from "react-redux";
 import { selectFilter} from "../redux/filter/selector";
-import { setCategoryId, setCurrentPage, setFilters } from "../redux/filter/slice";
+import { setCategoryId, setFilters} from "../redux/filter/slice";
 import {Categories} from "../components/Categories";
 import { Sort,  sortList } from "../components/Sort";
 import {PizzaBlock} from "../components/PizzaBlock/PizzaBlock";
 import Skeleton from "../components/PizzaBlock/Skeleton";
-import Pagination from "../components/Pagination/Pagination";
 import qs from "qs";
 import { fetchPizzas } from "../redux/pizza/asyncActions";
 import { SearchPizzaParams } from "../redux/pizza/types";
@@ -15,22 +14,17 @@ import { useAppDispatch } from "../redux/store";
 import pizzaImage from '../assets/img/pizza-pizza.jpg';
 
 
-
-
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
   const isMounted = useRef(false);
 
   const { items, status } = useSelector(selectPizzaData);
   const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
-
+  
   const onChangeCategory = useCallback((idx: number) => {
     dispatch(setCategoryId(idx));
   }, []);
 
-  const onChangePage = (page: number) => {
-    dispatch(setCurrentPage(page));
-  };
 
   const getPizzas = async () => {
     const sortBy = sort.sortProperty.replace('-', '');
@@ -50,7 +44,6 @@ const Home: React.FC = () => {
     // window.scrollTo(0, 0);
   };
 
- 
   useEffect(() => {
     getPizzas();
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
@@ -78,6 +71,8 @@ const Home: React.FC = () => {
   const skeletons = [...new Array(4)].map((_, index) => (
     <Skeleton key={index} />
   ));
+
+  
  
   return (
     <>
@@ -95,7 +90,7 @@ const Home: React.FC = () => {
       ) : (
         <div className="content__items">{status === 'loading' ? skeletons : pizzas}</div>
       )}
-      <Pagination currentPage={currentPage} onChangePage={onChangePage} />
+      
     </div>
     </>
   );

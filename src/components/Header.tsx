@@ -1,4 +1,3 @@
-import logo from "../assets/img/pizza-logo.png";
 import { Link, useLocation } from "react-router-dom";
 import Search from "./Search/Search";
 import { useSelector } from "react-redux";
@@ -32,10 +31,9 @@ export const Header: React.FC = () => {
       <div className="container">
         <Link to="/">
           <div className="header__logo">
-            <img width="80" src={logo} alt="Pizza logo" />
             <div>
-              <h1> Mmmmm Pizza</h1>
-              <p>Pizza pizza pizza ...</p>
+              <h1> Pizzalicious </h1>
+              <p>Pizza is always the answer</p>
             </div>
           </div>
         </Link>

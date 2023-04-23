@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/cart/slice";
 import { CartItem } from "../../redux/cart/types";
@@ -39,14 +39,29 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
   const [activeType, setActiveType] = useState(0);
   const [activeSize, setActiveSize] = useState(0);
   const [selectedPizza, setSelectedPizza] = useState<Pizza[]>([]);
+  const [priceAdd, setPriceAdd] = useState(0);
+  
 
   const addedCount = cartItem ? cartItem.count : 0;
 
+  useEffect(() => {
+    setPriceAdd(
+      sizes[activeSize] === 30
+        ? Number(price) + 2
+        : sizes[activeSize] === 40
+        ? Number(price) + 5
+        : price
+    );
+  }, [activeSize, price, sizes]);
+
+  
+
   const onClickAdd = () => {
+    
     const item: CartItem = {
       id,
       title,
-      price,
+      price: priceAdd,
       imageUrl,
       type: typeNames[activeType],
       size: sizes[activeSize],
@@ -65,6 +80,7 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
     setSelectedPizza([]);
     dispatch(openModal(false));
   };
+  
 
   return (
     <div className="pizza-block-wrapper">
@@ -97,7 +113,7 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
         </div>
 
         <div className="pizza-block__bottom">
-          <div className="pizza-block__price"> {price.toFixed(2)} €</div>
+          <div className="pizza-block__price"> {priceAdd.toFixed(2)} €</div>
           <button onClick={onClickAdd} className="button button--outline button--add">
             <svg
               width="12"

@@ -1,4 +1,4 @@
-import { Icon, Modal, Typography } from "@mui/material";
+import { Icon, Modal} from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { styleIcon, styleImage, styleInfo, styleModal } from "../assets/stylesMUI";
@@ -16,7 +16,8 @@ const PizzaModal: React.FC<ModalPizzaProps> = ({ pizzaItem, isModalOpen, onClose
     return null;
   }
 
-  const { title, imageUrl, price, topping } = pizzaItem[0];
+  const { title, imageUrl, topping } = pizzaItem[0];
+
 
   const handleCloseModal = () => {
     onCloseModal();
@@ -28,10 +29,10 @@ const PizzaModal: React.FC<ModalPizzaProps> = ({ pizzaItem, isModalOpen, onClose
         <Icon sx={styleIcon} onClick={handleCloseModal}>
           <CloseIcon />
         </Icon>
-        <img src={imageUrl} alt={title} style={styleImage} />
+        <img src={imageUrl} alt={title} style={styleImage} className='modal_pizza_img'/>
         <div className="pizza-modal__info" style={styleInfo}>
-          <Typography variant="h2">{title}</Typography>
-          <Typography variant="subtitle1">{topping}</Typography>
+          <h1>{title}</h1>
+          <p>{topping}</p>
         </div>
       </Box>
     </Modal>
