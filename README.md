@@ -38,14 +38,14 @@ To use the project, follow these steps:
 
 ### Features
 
-**Menu Display**
+**Menu Display**.
 The project includes a menu display that shows different types of pizza.
 For a detailed acquaintance with pizza and pizza toppings, the customer can go to a separate page of the selected pizza.
 
-**Customizable Pizza Orders**
+**Customizable Pizza Orders**.
 Customers can customize their pizza orders with options for crust type and size.
 
-**Sorting**
+**Sorting**.
 Customers can sort pizzas according to their preferences.
 
 ### Architecture and Design
